@@ -1,0 +1,76 @@
+<div class="text-layout">
+    <h1>Pipes Basicos</h1>
+
+    <p>Pipes incluidos en Angular - Usualmente en el Common Module</p>
+</div>
+
+<!-- ?ESTA PROPIEDAD DE LA CLASE ES PROPIA DE PRIME NG -->
+<div class="grid">
+    <div class="col-12 lg:col-4">
+        <p-card header="UpperCase" [subheader]="nombreLower | uppercase">
+            {{nombreLower | uppercase}}
+        </p-card>
+    </div>
+
+    <div class="col-12 lg:col-4">
+        <p-card header="LowerCase" [subheader]="nombreLower | lowercase">
+            {{nombreLower | lowercase}}
+        </p-card>
+    </div>
+
+    <div class="col-12 lg:col-4">
+        <p-card header="TitleCase" [subheader]="nombreCompleto | titlecase">
+            {{nombreCompleto | titlecase}}
+        </p-card>
+    </div>
+</div>
+
+<!-- ?PIPES DE FECHAS -->
+<div class="text-layout">
+    <h1>Date | Fecha | Pipe</h1>
+
+    <p>Pipes para mostrar las fechas</p>
+</div>
+
+<div class="grid">
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-card>
+            <ul>
+                <li>fecha</li>
+                <li>fecha | date</li>
+                <li>fecha | date:'short'</li>
+                <li>fecha | date:'long'</li>
+                <li>fecha | date:'dd/LL/YYY'</li>
+                <!--? este ultimo es una fecha personalizada (consultar la doc de angular)-->
+            </ul>
+
+            <hr>
+            <ul>
+                <li>fecha | date:'long':'GMT-6'</li>
+                <li>fecha | date:'long':'GMT-4'</li>
+                <li>fecha | date:'long':'zona horaria' - 'Idioma (En frances)'</li>
+            </ul>
+        </p-card>
+    </div>
+
+    <div class="col-12 md:col-6 lg:col-6">
+        <p-card>
+            <ul>
+                <li>{{fecha}}</li>
+                <li>{{fecha | date}}</li>
+                <li>{{fecha | date:'short'}}</li>
+                <li>{{fecha | date:'long'}}</li>
+                <li>{{fecha | date:'dd/LL/YYY'}}</li>
+                <!--? este ultimo es una fecha personalizada (consultar la doc de angular)-->
+            </ul>
+
+            <hr>
+            <ul>
+                <!-- //! IMPORTANTE si voy a cambiar el idioma debo colocar el pais, por ejemplo en el app.module importe es-CO eso es lo que debo colocar aqui si quiero el de colombia -->
+                <li>{{fecha | date:'long':'GMT-6'}}</li>
+                <li>{{fecha | date:'long':'GMT-4'}}</li>
+                <li>{{fecha | date:'long':'':'fr'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>
